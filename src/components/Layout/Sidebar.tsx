@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Home, Users, FileText, TrendingUp, Settings } from 'lucide-react'
+import { Home, Users, FileText, TrendingUp, Settings, Palette } from 'lucide-react'
 import { useAuth } from '../../contexts/AuthContext'
 
 const Sidebar: React.FC = () => {
@@ -12,6 +12,7 @@ const Sidebar: React.FC = () => {
     { name: 'Znajomi', href: '/friends', icon: Users },
     { name: 'Formularze', href: '/forms', icon: FileText },
     { name: 'Trendy', href: '/trends', icon: TrendingUp },
+    { name: 'Społeczność', href: '/community', icon: Palette },
     { name: 'Ustawienia', href: '/settings', icon: Settings },
   ]
 
