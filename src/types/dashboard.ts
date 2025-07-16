@@ -6,28 +6,25 @@ export interface User {
   role: 'admin' | 'user' | 'reseller';
 }
 
-export interface NavigationTab {
+export interface NavigationItem {
   id: string;
   label: string;
-  isActive: boolean;
+  icon: string;
+  path: string;
+  active?: boolean;
   hasDropdown?: boolean;
-  dropdownItems?: DropdownItem[];
-}
-
-export interface DropdownItem {
-  id: string;
-  label: string;
+  children?: NavigationItem[];
 }
 
 export interface DashboardState {
+  currentUser: User | null;
   activeTab: string;
-  user: User | null;
-  navigationTabs: NavigationTab[];
-  sidebarCollapsed: boolean;
+  navigationItems: NavigationItem[];
+  isLoading: boolean;
 }
 
-export interface DashboardActions {
+export interface DashboardContextType extends DashboardState {
   setActiveTab: (tabId: string) => void;
-  setUser: (user: User) => void;
-  toggleSidebar: () => void;
+  setCurrentUser: (user: User | null) => void;
+  updateNavigationItems: (items: NavigationItem[]) => void;
 }

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Layout } from './components/layout/Layout';
-import { DashboardContent } from './components/dashboard/DashboardContent';
+import { DashboardProvider } from './contexts/DashboardContext';
+import { DashboardLayout } from './components/dashboard/DashboardLayout';
 
 function App() {
   return (
-    <Layout>
-      <DashboardContent />
-    </Layout>
+    <DashboardProvider>
+      <DashboardLayout />
+    </DashboardProvider>
   );
 }
 
